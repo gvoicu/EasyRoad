@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  road_status: 1
+  road_id: 1
+
+two:
+  road_status: 1
+  road_id: 1

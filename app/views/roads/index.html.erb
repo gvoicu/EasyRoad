@@ -1,0 +1,20 @@
+<div data-role="header">
+  <h1>Select Your Road</h1>
+  <a href="/roads/new" data-role="button" class="ui-btn-right" data-transition="slide">New Road</a>
+</div>
+<div data-role="content">
+  <ul data-role="listview">
+    <% @roads.each do |road| %>
+      <li>
+        <a href="/roads/<%= road.id %>" data-transition="slide">
+          <h1><%= road.name %></h1>
+          <p>
+            Start: <%= road.start_adr %>
+            <br />
+            End: <%= road.end_adr %>
+          </p>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+</div>

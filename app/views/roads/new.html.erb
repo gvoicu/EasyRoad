@@ -1,0 +1,45 @@
+<div data-role="header">
+  <a href="/roads" data-transition="slide" data-direction="reverse">Back</a>
+  <h1>New Road</h1>
+</div>
+<div data-role="content">
+  <%= form_tag ({:action => "create"}), ({"data-ajax" => false}) do %>
+    <ul data-role="listview">
+      <li>
+        <%= label_tag "Name" %>
+        <br />
+        <%= text_field_tag :name %>
+      </li>
+      <li data-role="list-divider">
+        Start Address
+      </li>
+      <li>
+        <%= text_field_tag :start_adr %>
+      </li>
+      <li>
+        <div id="start_map_canvas" style="width: 290px; height: 200px;"></div>
+      </li>
+      <li data-role="list-divider">
+        End Address
+      </li>
+      <li>
+        <%= text_field_tag :end_adr %>
+      </li>
+      <li>
+        <div id="end_map_canvas" style="width: 290px; height: 200px;"></div>
+      </li>
+      <li>
+        <%= submit_tag "Create" %>
+      </li>
+  </ul>
+      <%= hidden_field_tag :start_lat %>
+      <%= hidden_field_tag :end_lat %>
+      <%= hidden_field_tag :start_lng %>
+      <%= hidden_field_tag :end_lng %>
+    <% end %>
+</div>
+
+<script type="text/javascript">
+  initialize_start(41.387531, 2.122758, "start_map_canvas", "start_lat", "start_lng", "start_adr")
+  initialize_end(41.387531, 2.122758, "end_map_canvas", "end_lat", "end_lng", "end_adr")
+</script>

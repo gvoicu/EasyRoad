@@ -1,0 +1,40 @@
+<div data-role="header">
+  <a href="/roads" data-transition="slide">Back</a>
+  <h1><%= @road.name %></h1>
+</div>
+<div data-role="content">
+  <ul data-role="listview">
+    <li data-role="list-divider" style="text-align: center;">
+      <%= Time.now.strftime("%y-%m-%d %H:%M") %>
+    </li>
+
+    <li style="text-align: center;">
+      You should go by
+    </li>
+    <li>
+      <h1>
+        <center>
+          <% if @road_status.road_status == 0 %>
+            <%= image_tag "bike.png", :style => "height: 200px; width: 200px; text-align: center;" %>
+          <% elsif @road_status.road_status == 1 %>
+            <%= image_tag "car.png", :style => "height: 200px; width: 200px; text-align: center;" %>
+          <% elsif @road_status.road_status == 2 %>
+            <%= image_tag "train.png", :style => "height: 200px; width: 200px; text-align: center;" %>
+          <% end %>
+        </center>
+      </h1>
+      <p>
+        <center>
+          <% if @road_status.road_status == 0 %>
+            <span style="text-align: center; font-size: 35px;"><strong>Bike</strong></span>
+          <% elsif @road_status.road_status == 1 %>
+            <span style="text-align: center; font-size: 35px;"><strong>Car</strong></span>
+          <% elsif @road_status.road_status == 2 %>
+            <span style="text-align: center; font-size: 35px;"><strong>Train</strong></span>
+          <% end %>
+        </center>
+        <br />
+      </p>
+    </li>
+  </ul>
+</div>
